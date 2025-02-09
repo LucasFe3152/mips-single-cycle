@@ -49,7 +49,7 @@ O processador implementa as seguintes instruções:
 - **Verilog Simulator** (Icarus Verilog e GTKWAVE)
 - **Make** (para automação de construção e simulação)
 
-### Passos para Compilar e Simular
+### Passos para Simular
 
 1. Clone o repositório para sua máquina local:
 2. Caso queria rodar outro código no processador apenas substitua pelo código hexadecimal no arquivo "codigo.mem"
