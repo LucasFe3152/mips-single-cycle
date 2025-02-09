@@ -4,6 +4,7 @@ module Registradores(
     input wire [4:0] WriteRegister,  // Endereço do registrador para escrita
     input wire [31:0] WriteData,     // Dados a serem escritos
     input wire RegWrite,             // Habilitação de escrita
+    input clk,
     output wire [31:0] ReadData1,    // Dados lidos do registrador 1
     output wire [31:0] ReadData2     // Dados lidos do registrador 2
 );
@@ -17,6 +18,8 @@ module Registradores(
         for (i = 0; i < 32; i = i + 1) begin
             registers[i] = 32'b0;  // Inicializa todos com zero
         end
+        registers[8] = 32'b00000000000000000000000000000101;
+        registers[9] = 32'b00000000000000000000000000000011;
     end
 
     // Leitura combinacional
@@ -24,7 +27,7 @@ module Registradores(
     assign ReadData2 = registers[ReadRegister2];
 
     // Escrita síncrona
-    always @(*) begin
+    always @(posedge clk) begin
         if (RegWrite && WriteRegister != 5'b0) begin
             registers[WriteRegister] <= WriteData;  // Escreve no registrador
         end
