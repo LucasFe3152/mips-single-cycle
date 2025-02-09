@@ -42,5 +42,17 @@ O processador implementa as seguintes instruções:
 - **Formato**: `slt $rd, $rs, $rt`
 - Compara os valores nos registradores `$rs` e `$rt`. Se o valor em `$rs` for menor que o valor em `$rt`, o registrador `$rd` recebe o valor 1; caso contrário, recebe 0.
 
+## Como Executar
 
+### Requisitos
+
+- **Verilog Simulator** (Icarus Verilog e GTKWAVE)
+- **Make** (para automação de construção e simulação)
+
+### Passos para Compilar e Simular
+
+1. Clone o repositório para sua máquina local:
+2. Caso queria rodar outro código no processador apenas substitua pelo código hexadecimal no arquivo "codigo.mem"
+3. Execute a instrução make all
+4. A saída da simulação são todos os registradores e algumas posições da memória, pode ser facilmente alterado no arquivo "tb_main.v"
 
