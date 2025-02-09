@@ -1,5 +1,7 @@
 `timescale 1ns/1ns
 `include "Main.v"
+
+
 module Simulacao;
     reg clk;
     reg reset;
@@ -10,10 +12,6 @@ module Simulacao;
         .reset(reset)
     );
 
-    // initial begin
-    //     clk = 0;
-    //     forever #5 clk = ~clk;
-    // end
 
     always #5 clk = ~clk;
 
@@ -27,10 +25,8 @@ module Simulacao;
         #20;
         reset = 0;
 
-        // Executa por tempo suficiente para testar todas as instruções
         #400;
 
-        // Mostra resultados finais
         $display("Registradores:");
         for (i = 0; i < 32; i = i + 1) begin
             $display("$%d: (%d)", i, $signed(mips.registradores.registers[i]));
