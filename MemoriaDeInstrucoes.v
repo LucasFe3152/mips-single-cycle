@@ -7,7 +7,7 @@ module MemoriaDeInstrucoes(
     integer i;
 
     initial begin
-        $readmemh("instrucoes.hex", memoria, 0, 11);
+        $readmemh("codigo.mem", memoria);
     end
 
     assign instrucao = memoria[addr[9:2]];// Usa os bits 9:2 para indexar (alinhado em palavras)
