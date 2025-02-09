@@ -56,6 +56,16 @@ module ControlUnit(
                 Branch = 1'b1;
                 ALUOp = 2'b01;
             end
+            6'b001000: begin
+                RegDst = 1'b0;
+                ALUSrc = 1'b1;
+                MemtoREG = 1'b0;
+                RegWrite = 1'b1;
+                MemRead = 1'b0;
+                MemWrite = 1'b0;
+                Branch = 1'b0;
+                ALUOp = 2'b00;
+            end
             default: begin
                 RegDst = 1'b0;
                 ALUSrc = 1'b0;

@@ -18,8 +18,8 @@ module Registradores(
         for (i = 0; i < 32; i = i + 1) begin
             registers[i] = 32'b0;  // Inicializa todos com zero
         end
-        registers[8] = 32'b00000000000000000000000000000101;
-        registers[9] = 32'b00000000000000000000000000000011;
+        // registers[8] = 32'b00000000000000000000000000000101;
+        // registers[9] = 32'b00000000000000000000000000000011;
     end
 
     // Leitura combinacional
